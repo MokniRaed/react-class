@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    user: "Skander",
+    time: 0,
+  };
+
+  componentWillUnmount() {
+    console.log("componentWillUnmount");
+  }
+  componentDidMount() {
+    //will change the time +1 each 1 second
+console.log("componentDidMount");
+    // this.interval = setInterval(() => {
+    //   this will change the state of time to incriment +1
+    //   this.setState((prevState) => ({
+    //     time: prevState.time + 1,
+    //   }));
+    // }, 1000);
+    //---------------------------------------
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello Iam {this.state.user} using React Class Component</h1>
+        <p>this takes {this.state.time} to render</p>
+      </div>
+    );
+  }
 }
-
 export default App;
